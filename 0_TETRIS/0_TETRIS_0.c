@@ -15,6 +15,6 @@ void main(void)
     }
     printf("%c%c\n",-30,-106);
     printf("%s\n",a);
-    printf("아니 이게 왜이러지?");
+    printf("아니 이게 왜이러지?\n");
 
 }
