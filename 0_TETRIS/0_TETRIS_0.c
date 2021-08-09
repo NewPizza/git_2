@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-void main()
+void main(void)
 {
      
     
-    char a[] = "‚ñ†a";
+    char a[] = "°·a";
 
 
 
@@ -15,5 +15,6 @@ void main()
     }
     printf("%c%c\n",-30,-106);
     printf("%s\n",a);
+    printf("æ∆¥œ ¿Ã∞‘ ø÷¿Ã∑Ø¡ˆ?");
 
 }
