@@ -1,20 +1,44 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <windows.h>
+void prt_field();
+void gotoxy(int x_data, int y_data);
+#define field_x 10
+#define field_y 20
+boolean field_data[field_x][field_y];
+int x = 0;
+int y = 0;
 
 void main(void)
 {
-     
-    
-    char a[] = "°·a";
+    system("chcp 65001"); //ÏúàÎèÑÏö∞ cmd Ï∞Ω UTF-8Î°ú ÏÑ§Ï†ï
+    system("cls");
 
+    prt_field();
+    gotoxy(12,12);
+    printf("a");
+}
 
-
-    for(int i = 0; i < sizeof(a);i++)
+void prt_field()
+{
+    for (int j = 0; j < field_x + 2; j++){printf("‚ñ°");}
+    printf("\n");
+    for (int i = 0; i < field_y; i++)
     {
-        printf("%d\n", sizeof(a));
-        printf("%d\n", a[i]);
+        printf("‚ñ°");
+        for (int j = 0; j < field_x; j++)
+        {
+            if (field_data[j][i] == 0){printf("  ");}
+            else{printf("‚ñ†");}
+        }
+        printf("‚ñ°");
+        printf("\n");
     }
-    printf("%c%c\n",-30,-106);
-    printf("%s\n",a);
-    printf("æ∆¥œ ¿Ã∞‘ ø÷¿Ã∑Ø¡ˆ?\n");
+    for (int j = 0; j < field_x + 2; j++){printf("‚ñ°");}
+}
+
+void gotoxy(int x_data, int y_data)
+{
+    COORD pos={x_data,y_data}; 
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 
 }
